@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task Tracking", "Task Tracking\Task Tracking.csproj", "{1DC3D693-3863-4ABB-B590-626064A93CD5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{81485762-1795-482D-9181-3609619D78B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLL", "DLL\DLL.csproj", "{AA6DCA09-AE9B-406B-8D9B-6C7D62B22777}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{1DC3D693-3863-4ABB-B590-626064A93CD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DC3D693-3863-4ABB-B590-626064A93CD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DC3D693-3863-4ABB-B590-626064A93CD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81485762-1795-482D-9181-3609619D78B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81485762-1795-482D-9181-3609619D78B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81485762-1795-482D-9181-3609619D78B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81485762-1795-482D-9181-3609619D78B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA6DCA09-AE9B-406B-8D9B-6C7D62B22777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA6DCA09-AE9B-406B-8D9B-6C7D62B22777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA6DCA09-AE9B-406B-8D9B-6C7D62B22777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA6DCA09-AE9B-406B-8D9B-6C7D62B22777}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
