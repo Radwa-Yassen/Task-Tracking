@@ -56,15 +56,16 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\TaskRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
+    <ProjectReference Include="..\BLL\Domain.csproj">
       <Project>{81485762-1795-482d-9181-3609619d78b5}</Project>
-      <Name>BLL</Name>
+      <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +73,7 @@
       <DependentUpon>201708071850535_AddTrackAndUserTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

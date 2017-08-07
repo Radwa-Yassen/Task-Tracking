@@ -13,8 +13,8 @@ namespace DLL
         {
         }
 
-        public DbSet<BLL.Models.Task> Tasks { get; set; }
-        public DbSet<BLL.Models.User> Users { get; set; }
+        public DbSet<Domain.Models.Task> Tasks { get; set; }
+        public DbSet<Domain.Models.User> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

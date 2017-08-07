@@ -1,6 +1,6 @@
 namespace DLL.Migrations
 {
-    using BLL.Models;
+    using Domain.Models;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
