@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Models;
+using System.Data.Entity;
 
 namespace DLL.Repositories
 {
@@ -24,22 +25,35 @@ namespace DLL.Repositories
 
         public void AddTask(Domain.Models.Task task)
         {
-            throw new NotImplementedException();
+            _dbContext.Tasks.Add(task);
+            _dbContext.SaveChanges();
+
         }
 
-        public void DeleteTask(Domain.Models.Task task)
+        public void DeleteTask(Guid taskId)
         {
-            throw new NotImplementedException();
+            var task = _dbContext.Tasks.Where(t => t.Id == taskId).FirstOrDefault();
+            if (task != null)
+            {
+                _dbContext.Tasks.Remove(task);
+                _dbContext.SaveChanges();
+            }
         }
 
         public List<Domain.Models.Task> GetTasksList()
         {
-            throw new NotImplementedException();
+            return _dbContext.Tasks.Include("User").ToList();
         }
 
         public void UpdateTask(Domain.Models.Task task)
         {
-            throw new NotImplementedException();
+            _dbContext.Entry(task).State = EntityState.Modified;
+            _dbContext.SaveChanges();
+        }
+
+        public Domain.Models.Task GetTaskById(Guid taskId)
+        {
+            return _dbContext.Tasks.Where(t => t.Id == taskId).FirstOrDefault();
         }
     }
 }

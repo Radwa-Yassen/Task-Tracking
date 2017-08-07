@@ -11,6 +11,7 @@ namespace DLL.Repository
         void AddTask(Domain.Models.Task task);
         void UpdateTask(Domain.Models.Task task);
         List<Domain.Models.Task> GetTasksList();
-        void DeleteTask(Domain.Models.Task task);
+        void DeleteTask(Guid taskId);
+        Domain.Models.Task GetTaskById(Guid taskId);
     }
 }

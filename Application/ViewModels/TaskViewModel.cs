@@ -17,5 +17,13 @@ namespace Application.ViewModels
         public DateTime Date { get; set; }
 
         public string UserName { get; set; }
+
+        public TaskViewModel(Guid id, string title, string details, DateTime datetime,string userName)
+        {
+            Id = id;
+            Details = details;
+            Date = datetime;
+            UserName = userName;
+        }
     }
 }
