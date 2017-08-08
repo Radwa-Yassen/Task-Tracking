@@ -1,10 +1,34 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-	<meta charset="utf-8" />
-</head>
-<body>
+﻿<div data-ng-controller="taskAddEditController as taskAddEditCntrl">
+    <form name="taskForm">
+        <label class = "col-md-2 control-label">Task title : </label>
+        <input class = "form-control" name="taskTitle" type="text" ng-required="true" ng-maxlength="199" data-ng-model="taskAddEditCntrl.task.Title"/>
+        
+        <br />
+        <label class = "col-md-2 control-label">Task Details : </label>
+        <input class = "form-control" name="taskDetails" type="text" ng-required="true" ng-maxlength="199" data-ng-model="taskAddEditCntrl.task.Details" />
+        <br />
+        <br />
 
-</body>
-</html>
+        <label class = "col-md-2 control-label">Task Date : </label>
+        <input class = "form-control" name="taskDate" type="text" ng-required="true" data-ng-model="taskAddEditCntrl.task.Date">
+        <span class="col-md-10"> Note : date in formate (day/month/year)</span>
+         <br />
+        <br />
+
+        <label class = "col-md-2 control-label">Task User : </label>
+
+        <select name="taskUser" ng-required="true" id="repeatSelect" data-ng-model="taskAddEditCntrl.task.UserId" data-ng-options="user.Id as user.Name for user in taskAddEditCntrl.userList">
+            <option value="" selected>select User</option>
+            <option value=""></option>
+        </select>
+        <br />
+
+        <em data-ng-show="taskAddEditCntrl.taskForm.taskUser.$invalid && taskAddEditCntrl.taskForm.taskUser.$error.required  && (!taskAddEditCntrl.taskForm.taskUser.$pristine || taskAddEditCntrl.submitted)">User is required</em>
+        <br />
+        <br />
+        <br />
+
+         <button class="btn btn-default" data-ng-click="taskAddEditCntrl.save()">Save</button>
+    </form>
+</div>
+

@@ -1,19 +1,22 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/angular.min.debug.js"></script>
 <script src="~/Scripts/angular-ui-router.min.js"></script>
 <script src="~/app/task/task.module.js"></script>
 <script src="~/app/task/task.config.js"></script>
 <script src="~/app/task/task.data.js"></script>
-
+<script src="~/app/task/task.js"></script>
+<script src="~/app/task/addEdit.js"></script>
 
 <div id="taskdiv">
     <!-- MAIN CONTENT -->
     <div>
+        <br />
+        <br />
+
         <div data-ui-view></div>
     </div>
-
 </div>
 <script>
     angular.element(document).ready(function () {

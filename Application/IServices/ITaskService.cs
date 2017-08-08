@@ -14,5 +14,7 @@ namespace Application.IServices
         void UpdateTask(AddUpdateTaskCommand taskCommand);
         List<TaskViewModel> GetTasksList();
         void DeleteTask(Guid taskId);
+        TaskViewModel GetTask(Guid taskId);
+        List<UserViewModel> GetUsersList();
     }
 }

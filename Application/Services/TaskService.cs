@@ -23,7 +23,7 @@ namespace Application.Services
         {
             if (taskCommand != null)
             {
-                Domain.Models.Task task = new Domain.Models.Task(taskCommand.Title, taskCommand.Details, taskCommand.UserId);
+                Domain.Models.Task task = new Domain.Models.Task(taskCommand.Title, taskCommand.Details, taskCommand.UserId, taskCommand.Date);
                 _taskRepository.AddTask(task);
             }
         }
@@ -39,7 +39,19 @@ namespace Application.Services
             var tasksList = _taskRepository.GetTasksList();
             foreach (var task in tasksList)
             {
-                list.Add(new TaskViewModel(task.Id, task.Title, task.Details, task.Date, task.User.Name));
+                list.Add(new TaskViewModel(task.Id, task.Title, task.Details, task.Date, task.User.Name, task.UserId));
+            }
+
+            return list;
+        }
+
+        public List<UserViewModel> GetUsersList()
+        {
+            var list = new List<UserViewModel>();
+            var usersList = _taskRepository.GetUsersList();
+            foreach (var user in usersList)
+            {
+                list.Add(new UserViewModel() { Id = user.Id, Name = user.Name });
             }
 
             return list;
@@ -53,8 +65,21 @@ namespace Application.Services
                 task.Title = taskCommand.Title;
                 task.Details = taskCommand.Details;
                 task.UserId = taskCommand.UserId;
+                task.Date = taskCommand.Date;
                 _taskRepository.UpdateTask(task);
             }
+        }
+
+        public TaskViewModel GetTask(Guid taskId)
+        {
+            TaskViewModel taskView = null;
+            Domain.Models.Task task = _taskRepository.GetTaskById(taskId);
+            if (task != null)
+            {
+                taskView = new TaskViewModel(task.Id, task.Title, task.Details, task.Date, task.User.Name, task.UserId);
+            }
+
+            return taskView;
         }
     }
 }

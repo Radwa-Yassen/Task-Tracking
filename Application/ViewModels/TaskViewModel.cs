@@ -18,12 +18,16 @@ namespace Application.ViewModels
 
         public string UserName { get; set; }
 
-        public TaskViewModel(Guid id, string title, string details, DateTime datetime,string userName)
+        public Guid UserId { get; set; }
+
+        public TaskViewModel(Guid id, string title, string details, DateTime datetime, string userName, Guid userId)
         {
             Id = id;
+            Title = title;
             Details = details;
             Date = datetime;
             UserName = userName;
+            UserId = userId;
         }
     }
 }

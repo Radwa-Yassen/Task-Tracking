@@ -26,12 +26,13 @@ namespace Domain.Models
 
         public virtual User User { get; set; }
 
-        public Task(string title, string details,Guid userId)
+        public Task(string title, string details, Guid userId, DateTime date)
         {
             Id = Guid.NewGuid();
             Title = title;
             Details = details;
             UserId = userId;
+            Date = date;
         }
 
         public Task()

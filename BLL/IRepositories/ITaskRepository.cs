@@ -13,5 +13,6 @@ namespace DLL.Repository
         List<Domain.Models.Task> GetTasksList();
         void DeleteTask(Guid taskId);
         Domain.Models.Task GetTaskById(Guid taskId);
+        List<Domain.Models.User> GetUsersList();
     }
 }

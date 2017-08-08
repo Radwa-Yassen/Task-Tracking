@@ -23,7 +23,7 @@
           })
 
           .state('task.addEdit', {
-              url: 'addEdit',
+              url: 'addEdit:taskId',
               templateUrl: '/app/task/AddEdit.html',
           })
    }]);

@@ -1,1 +1,25 @@
-﻿list
+﻿<div data-ng-controller="taskController as taskCntrl">
+    <div class="container">
+        <table class="table" data-ng-if="taskCntrl.taskList && taskCntrl.taskList.length > 0">
+            <tr>
+                <td>Title</td>
+                <td>Details</td>
+                <td>Date</td>
+                <td>UserName</td>
+            </tr>
+
+            <tr data-ng-repeat="task in taskCntrl.taskList track by task.Id">
+                <td>{{task.Title}}</td>
+                <td>{{task.Details}}</td>
+                <td>{{task.Date}}</td>
+                <td>{{task.UserName}}</td>
+
+                <td><a data-ng-click="taskCntrl.deleteTask(task.Id)">Delete</a></td>
+                <td><a data-ui-sref="task.addEdit({ taskId: task.Id })">Edit</a></td>
+            </tr>
+        </table>
+
+    </div>
+   
+    <a class="btn btn-default" data-ui-sref="task.addEdit">Add new task</a>
+</div>

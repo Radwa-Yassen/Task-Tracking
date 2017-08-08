@@ -12,5 +12,6 @@ namespace Application.Command
         public string Title { get; set; }
         public string Details { get; set; }
         public Guid UserId { get; set; }
+        public DateTime Date { get; set; }
     }
 }

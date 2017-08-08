@@ -45,6 +45,11 @@ namespace DLL.Repositories
             return _dbContext.Tasks.Include("User").ToList();
         }
 
+        public List<Domain.Models.User> GetUsersList()
+        {
+            return _dbContext.Users.ToList();
+        }
+
         public void UpdateTask(Domain.Models.Task task)
         {
             _dbContext.Entry(task).State = EntityState.Modified;
